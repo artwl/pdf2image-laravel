@@ -6,6 +6,7 @@ Laravel pdf to image tool
 ## Dependencies
 
 1、imagick
+
 2、intervention/image": "^2.0"
 
 ## Install
