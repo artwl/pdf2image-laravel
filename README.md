@@ -1,5 +1,5 @@
 
-# pdf-to-image
+# pdf2image-laravel
 
 Laravel pdf to image tool
 
