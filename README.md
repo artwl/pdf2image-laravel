@@ -3,6 +3,8 @@
 
 Laravel pdf to image tool
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/artwl/pdf2image-laravel.svg?style=flat-square)](https://packagist.org/packages/artwl/pdf2image-laravel)
+
 ## Dependencies
 
 1、imagick
