@@ -17,7 +17,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "artwl\\Pdf2Image\\": "src"
+            "Artwl\\Pdf2Image\\": "src"
         }
     },
     "extra": {
@@ -29,6 +29,6 @@
                 "Pdf2Image": "Artwl\\Pdf2Image\\Pdf2ImageFacade"
             }
         }
-    }
-
+    },
+    "minimum-stability": "stable"
 }
