@@ -11,23 +11,23 @@ Laravel pdf to image tool
 
 ## Install
 
-`$ composer require jianhuawang/laravel-pdf-to-image:0.4`
+`$ composer require artwl/pdf2image-laravel`
 ## Optional(Add Provider And Alias if laravel < 5.5)
 
 Add this to your config/app.php
 
 under "providers":
 
-`JianhuaWang\PdfToImage\PdfToImageMaker::class,`
+`Artwl\Pdf2Image\Pdf2ImageMaker::class,`
 
 under "aliases":
 
-`'PdfToImage'=>JianhuaWang\PdfToImage\PdfToImageFacade::class,`
+`'Pdf2Image'=>Artwl\Pdf2Image\Pdf2ImageFacade::class,`
 
 ## Examples
 
 ```
-use PdfToImage;
- 
-PdfToImage::pdfDisk("localnormal") -> saveImages();
+use Pdf2Image;
+
+Pdf2Image::pdfDisk("localnormal") -> saveImages();
 ```
