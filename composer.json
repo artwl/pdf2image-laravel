@@ -1,37 +1,32 @@
 {
-    "name": "jianhuawang/laravel-pdf-to-image",
+    "name": "artwl/pdf2image-laravel",
     "description": "Convert pdf files to images",
     "keywords": ["pdf to image", "pdf", "laravel", "convert image ", "pdt-to-image", "laravel 5"],
     "require": {
+        "php": ">=5.5.0",
         "ext-imagick" : "*",
         "intervention/image": "^2.0",
-        "illuminate/support": "5.*"
+        "illuminate/support": "~5.2"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": "Jianhua Wang",
-            "email": "610304002@qq.com"
+            "name": "Artwl",
+            "email": "10000@qq.com"
         }
     ],
     "autoload": {
-        "psr-0": {
-            "JianhuaWang\\PdfToImage\\": "src"
-        },
         "psr-4": {
-            "JianhuaWang\\PdfToImage\\": "src"
-        },
-        "files": [
-            
-        ]
+            "artwl\\Pdf2Image\\": "src"
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "JianhuaWang\\PdfToImage\\PdfToImageServiceProvider"
+                "Artwl\\Pdf2Image\\Pdf2ImageServiceProvider"
             ],
             "aliases": {
-                "PdfToImage": "JianhuaWang\\PdfToImage\\PdfToImageFacade"
+                "Pdf2Image": "Artwl\\Pdf2Image\\Pdf2ImageFacade"
             }
         }
     }
