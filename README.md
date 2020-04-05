@@ -26,8 +26,8 @@ under "aliases":
 
 ## Examples
 
-```
+```php
 use Pdf2Image;
 
-Pdf2Image::setFile(public_path() . "/imgs/test.pdf") -> saveImages(public_path() . "/imgs/");
+$imgs = Pdf2Image::setFile(public_path() . "/imgs/test.pdf") -> saveImages(public_path() . "/imgs/");
 ```
