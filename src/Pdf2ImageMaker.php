@@ -23,7 +23,7 @@ class Pdf2ImageMaker
     public function totalPages()
     {
         if (empty($this -> totalPages)) {
-            $imagick = new \imagick();
+            $imagick = new imagick();
             $imagick -> readImage($this->pdfFile);
             $this -> totalPages = (int)$imagick->getnumberimages();
         }
@@ -32,29 +32,30 @@ class Pdf2ImageMaker
 
     public function saveImages($saveDir, $pageIndex = -1)
     {
-        $imagick = new \imagick();
+        $imagick = new imagick();
         $imagick -> readImage($this -> pdfFile);
         $start = 0;
         $end = (int) $imagick->getnumberimages();
         $this->totalPages = $end;
-        if ($pageIndex >= $end || $pageIndex < 0) {
-            return null;
-        }
         $ret = [];
         if ($pageIndex == -1) {
             for ($i = $start; $i < $end; $i++) {
                 $ret[] = $this->saveImage($saveDir, $i);
             }
         } else {
+            if ($pageIndex >= $end || $pageIndex < 0) {
+                return null;
+            }
             $ret[] = $this->saveImage($saveDir, $pageIndex);
         }
         return $ret;
     }
 
     private function saveImage($saveDir, $pageIndex) {
-        $pdfFileName = explode("/", $this -> pdfFile).pop();
+        $tempArr = explode("/", $this -> pdfFile);
+        $pdfFileName = array_pop($tempArr);
         $fileName = $saveDir . "/" . $pdfFileName . "_" . $pageIndex . ".jpg";
-        $imagick = new \imagick();
+        $imagick = new imagick();
         $imagick->setResolution(100, 100);
         $imagick -> readImage($this -> pdfFile . "[$pageIndex]");
         Image::make($imagick) -> save($fileName);

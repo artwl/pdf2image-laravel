@@ -26,8 +26,25 @@ under "aliases":
 
 ## Examples
 
+### Get pdf file pages count
+
+```php
+use Pdf2Image;
+
+$pageCount = Pdf2Image::setFile(public_path() . "/imgs/test.pdf") -> totalPages();
+```
+
+
+### Pdf all page to imgs
 ```php
 use Pdf2Image;
 
 $imgs = Pdf2Image::setFile(public_path() . "/imgs/test.pdf") -> saveImages(public_path() . "/imgs/");
+```
+
+### Pdf one page to img
+```php
+use Pdf2Image;
+
+$imgs = Pdf2Image::setFile(public_path() . "/imgs/test.pdf") -> saveImages(public_path() . "/imgs/", 0);
 ```
